@@ -1,0 +1,35 @@
+$basic-color: #2078e0 !default;
+$text-align: left !default;
+$--box-shadow: rgba(0, 0, 0, 0.35) 0px 3px 8px 0px !default;
+
+$--border: 1px solid #ccc !default;
+
+.margin0 {
+  margin: 0 !important;
+}
+
+.align-left {
+  text-align: $text-align;
+}
+
+/*图表固定左侧和顶部*/
+.cCell {
+  padding: 0 !important;
+  height: 100px !important;
+  .cell {
+    padding: 0 !important;
+  }
+}
+
+
+.hCell .cell {
+  padding: 0 !important;
+}
+
+//卡片化阴影
+.--box-shadow {
+  box-shadow: $--box-shadow;
+  padding: 10px;
+}
+
+//边框
