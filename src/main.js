@@ -6,6 +6,7 @@ import ElementUI from 'element-ui'
 import '../theme/index.css'
 import router from './router/index'
 import store from './vuex/index'
+Vue.config.devtools = true
 // import axios from 'axios'
 // import Qs from 'qs'
 //QS是axios库中带的，不需要我们再npm安装一个
