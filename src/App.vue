@@ -2,23 +2,28 @@
   <div id="app">
     <el-container style="height:100%;" v-if="this.$store.getters.app_visible">
       <el-header class="header" style="height:80px;">
-        <img src="./assets/logo.png" alt="logo" class="img-logo">
+        <div id="logoIndex">
+          <img src="./assets/logo.png" alt="logo" class="img-logo">
+        </div>
+
         <div id="user" v-if="this.$store.getters.getIsLogin">
           <!--<el-tag type="info">用户名：</el-tag>-->
+          <div class="fr">
+            <el-dropdown @command="handleCommand">
+              <el-button type="primary" plain>{{this.$store.getters.getUsername}}<i class="el-icon-arrow-down el-icon--right"></i></el-button>
+              <el-dropdown-menu slot="dropdown" style="font-size:12px;min-width:100px;">
+                <el-dropdown-item command="1" style="font-size:10px;cursor:pointer;">修改信息</el-dropdown-item>
+                <el-dropdown-item divided command="2" style="font-size:10px;cursor:pointer;">修改密码</el-dropdown-item>
+                <el-dropdown-item divided command="3" style="font-size:10px;cursor:pointer;">退出</el-dropdown-item>
+              </el-dropdown-menu>
+            </el-dropdown>
+          </div>
 
-          <el-dropdown @command="handleCommand">
-            <el-button type="primary" plain>{{this.$store.getters.getUsername}}<i class="el-icon-arrow-down el-icon--right"></i></el-button>
-            <el-dropdown-menu slot="dropdown" style="font-size:12px;min-width:100px;">
-              <el-dropdown-item command="1" style="font-size:10px;cursor:pointer;">修改信息</el-dropdown-item>
-              <el-dropdown-item divided command="2" style="font-size:10px;cursor:pointer;">修改密码</el-dropdown-item>
-              <el-dropdown-item divided command="3" style="font-size:10px;cursor:pointer;">退出</el-dropdown-item>
-            </el-dropdown-menu>
-          </el-dropdown>
 
           <!--<el-button type="primary" @click="clearStorage" size="mini">退出</el-button>-->
         </div>
       </el-header>
-      <el-container style="height: 100%;margin-bottom:100px;">
+      <el-container style="height: 100%;margin-bottom:100px;overflow:hidden;">
         <el-aside width="220px">
           <el-row class="tac">
             <el-col :span="24">
@@ -150,7 +155,7 @@
           </el-row>
         </el-aside>
 
-        <el-container style="height:100%;">
+        <el-container> <!--  style="height:100%;" -->
           <el-main>
             <transition name="slide-fade">
               <router-view @childClose="childClose" :realshow="realshow"></router-view>
@@ -574,12 +579,16 @@ img{
   .img-logo{
     float:left;
     /*margin-left:10px;*/
-    width:20%;
     max-width:250px;
   }
 
+  #logoIndex{
+    width: 20%;
+  }
+
   #user{
-    float:right;
+    width: 80%;
+
   }
 
   .intro-title{
