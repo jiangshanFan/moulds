@@ -459,6 +459,9 @@
             if(!item.projectDescribe) {
               item.projectDescribe = {};
             }
+            if(!item.projectStatistics) {
+              item.projectStatistics = {};
+            }
           }
           if(i === 'URGENT') {
             arr[0] = obj.content[i];
