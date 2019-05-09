@@ -42,7 +42,7 @@
         <el-row :gutter="10" class="mt20">
           <el-col :span="6" v-for="(item,index) in items.content" :key="index">
             <div :class="[item.status,'mb20']" @click="projectsDetail(item)">
-              <p class="important_info f16 out" title="hello">{{item.projectName}}</p>
+              <p class="important_info f16 out" :title="item.projectName">{{item.projectName}}</p>
               <p class="important_info f14" style="font-weight:bold;">（{{item.projectNumber}}）</p>
               <p><span class="mr20">模具数量：{{item.mouldCodeNum}}个</span><span>进行中：{{item.deplayIngNum}}个</span></p>
               <p><span class="mr20">走模完成：{{item.mouldFinish}}个</span><span>已完结：{{item.projectMooldFinish}}个</span></p>
