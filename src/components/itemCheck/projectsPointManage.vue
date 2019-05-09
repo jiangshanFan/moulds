@@ -565,13 +565,13 @@
 
   /*.el-upload-list{display:none !important;}*/
 
-  //表格行样式
+  /* 表格行样式 */
   .el-table .row_URGENT{color:#E51C23 !important;}
   .row_DELAY{color:#F9BB00 !important;}
   .row_NORMAL{color:#333 !important;}
   .row_SUSPENSION{color:#9936E6 !important;}
   .row_CANCEL{color:#ccc !important;}
 
-  //表格单元格样式
+  /* 表格单元格样式 */
   .cell_style{border-right:1px solid #333 !important;}
 </style>
