@@ -477,8 +477,10 @@
         }
         // console.log('%c数组信息：','font-size:20px;color:red', arr.flat(0));
         // this.items.content = [...arr.flat(1)];
-        for(let item of arr) {
-          this.items.content = [...this.items.content,...item]
+        for(let arrItem of arr) {
+          if(arrItem) {
+            this.items.content = [...this.items.content,...arrItem]
+          }
         }
         console.log(this.items.content)
         this.items.totalCount = obj.totalCount;
