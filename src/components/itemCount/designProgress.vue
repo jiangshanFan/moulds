@@ -32,14 +32,14 @@
             <p>2D图发布时间：{{publish.drawing2dReleaseTime}}</p>
             <p class="out" :title="publish.changeMouldNotice">
               <span>改模通知发布：最新图纸</span>
-              <a @click="$clip(publish.changeMouldNoticePath)">{{publish.changeMouldNotice}}</a>
+              <a style="cursor:pointer;text-decoration:underline;" @click="$clip(publish.changeMouldNoticePath)">{{publish.changeMouldNotice}}</a>
             </p>
           </el-col>
           <el-col class="ovw-h">
             <p>开粗图发布时间：{{publish.drawingKaiChuReleaseTime}}</p>
             <p class="out" :title="publish.liaison">
               <span>内部联络单发布：</span>
-              <a @click="$clip(publish.liaisonPath)">{{publish.liaison}}</a>
+              <a style="cursor:pointer;text-decoration:underline;" @click="$clip(publish.liaisonPath)">{{publish.liaison}}</a>
             </p>
           </el-col>
 

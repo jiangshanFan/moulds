@@ -70,6 +70,8 @@ Vue.prototype.$clip = function (addr) {
       console.log('请在Google浏览器打开，以便获得更好的体验，谢谢！');
     }
     document.body.removeChild(tNode);
+  } else {
+    this.$message({showClose: true, type: 'warning', message: 'PDCA文件路径暂无！'})
   }
 };
 
