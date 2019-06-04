@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <el-container style="height:100%;" v-if="this.$store.getters.app_visible">
+    <el-container style="height:100%;" v-if="isRouterAlive">
       <el-header class="header" style="height:80px;">
         <div id="logoIndex">
           <img src="./assets/logo.png" alt="logo" class="img-logo">
@@ -219,7 +219,7 @@
 <script>
   import { Message } from 'element-ui'
   /** 导入api.js */
-  import {loginOut, updateUserInfo, changePwd} from './axios/api.js'
+  import {loginOut, changeUserInfo, changePwd} from './axios/api.js'
 
   export default {
     name: 'App',
@@ -431,7 +431,7 @@
         // this.form.checkPass = '';
       },
 
-  //修改邮箱，联系方式或密码
+      //修改邮箱，联系方式或密码
       changeInfo(form) {
         if (this.changeFlag === 1) {
           this.$refs.ruleForm1.validate(async (valid) => {
@@ -444,7 +444,7 @@
                 // if(form.mobile) {
                 //   params.mobile = form.mobile;
                 // }
-                let res = await updateUserInfo({mail: form.mail, mobile: form.mobile,});
+                let res = await changeUserInfo({mail: form.mail, mobile: form.mobile,});
                 if (res.status === 1) {
                   let obj = Object.assign(JSON.parse(localStorage.getItem('userLoginVO')),{mail: form.mail, mobile: form.mobile,});
                   localStorage.setItem('userLoginVO',JSON.stringify(obj));

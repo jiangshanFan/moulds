@@ -327,6 +327,9 @@
       //点击按钮下载Excel
       export_excel() {
         let res = projectRateExport({projectNo: this.$store.getters.projects_info.projectNumber,},this.$store.getters.projects_info); //返回一个Promise对象
+        if (res.status === 1) {
+          this.changeData();
+        }
       },
 
       //文件上传成功后调用参数进行判断并提示信息

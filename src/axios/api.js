@@ -40,7 +40,7 @@ export const addUser = data => {return $ajax({url: '/api/user/addUser', method: 
 export const changePwd = data => {return $ajax({url: '/api/user/changePwd', method: 'post', data: data,})};
 
 //修改邮箱和联系方式
-export const updateUserInfo = data => {return $ajax({url: '/api/user/updateUserInfo', method: 'post', data: data, meta: 1,})};
+export const changeUserInfo = data => {return $ajax({url: '/api/user/changeUserInfo', method: 'post', data: data, meta: 1,})};
 
 
 /**
